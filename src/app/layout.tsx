@@ -6,6 +6,7 @@ import NavBar from './components/Navbar';
 import { Inter as FontSans, Old_Standard_TT as FontSerif } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Providers from './Providers';
+import {WagmiConfig, wagmiConfig, appInfo, RainbowKitProvider, chains} from "@/utils/WalletConnector"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -24,12 +25,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning className={fontSerif.variable}>
       <body className={cn("min-h-screen bg-background font-serif antialiased")}>
         <Providers>
+      <WagmiConfig config={wagmiConfig}>
+        <RainbowKitProvider appInfo={appInfo} chains={chains}>/
           <ThemeProvider>
             <NavBar />
             <main className="content-with-navbar-padding">
               {children}
             </main>
           </ThemeProvider>
+        </RainbowKitProvider>
+          </WagmiConfig>
         </Providers>
       </body>
     </html>

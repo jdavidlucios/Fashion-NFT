@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Sun, Moon } from "lucide-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import dynamic from "next/dynamic";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 // Dynamically load WalletMultiButton to ensure it is only rendered on the client side
 const DynamicWalletMultiButton = dynamic(
@@ -84,6 +85,7 @@ const NavBar = () => {
             )}
           </button>
           <DynamicWalletMultiButton />
+          <ConnectButton/>
         </div>
       </div>
       <div className="container mx-auto flex justify-between items-center sm:hidden mt-2">
