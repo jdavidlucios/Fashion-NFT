@@ -9,7 +9,7 @@
     "server": "nodemon server/server.js"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.606.0",
+    "@aws-sdk/client-s3": "^3.913.0",
     "@aws-sdk/lib-storage": "^3.606.0",
     "@coral-xyz/anchor": "^0.29.0",
     "@radix-ui/react-dropdown-menu": "^2.1.1",
